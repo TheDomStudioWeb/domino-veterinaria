@@ -1,0 +1,16 @@
+{
+  "nombre": "Veterinaria Ejemplo",
+  "rubro": "veterinaria",
+  "logo": "logo.png",
+  "firebase": {
+    "apiKey": "PEGAR",
+    "authDomain": "PEGAR",
+    "projectId": "PEGAR",
+    "storageBucket": "PEGAR",
+    "messagingSenderId": "PEGAR",
+    "appId": "PEGAR",
+    "measurementId": "OPCIONAL (G-XXXX, si Firebase lo muestra)"
+  },
+  "turnos_url": "",
+  "documentos": false
+}
