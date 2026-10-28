@@ -258,7 +258,7 @@ function puedeCancelar_(t, c) { return ESTADOS_ACTIVOS.indexOf(t.estado) > -1 &&
 function cancelarTurno_(p) {
   const t = turnoPorCodigo_(p.codigo); if (!t) throw falla_('turno_no_encontrado');
   if (!puedeCancelar_(t, config_())) throw falla_(ESTADOS_ACTIVOS.indexOf(t.estado) > -1 ? 'fuera_de_plazo' : 'estado_invalido');
-  cambiarEstadoInterno_(t.id, 'Cancelado', 'Cancelado por el cliente');
+  cambiarEstadoInterno_(t.id, 'Cancelado', 'Cancelado por el dueño');
   return { ok: true };
 }
 
