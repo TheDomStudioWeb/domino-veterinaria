@@ -1,10 +1,10 @@
 {
-    "name": "DOMino · Veterinaria (demo)",
+    "name": "DOMino Veterinaria",
     "short_name": "Veterinaria",
-    "id": "./",
+    "id": "/domino-veterinaria/",
     "lang": "es",
-    "description": "Hub de gestión para estudios profesionales",
-    "start_url": "./",
+    "description": "Gestión de dueños, mascotas y turnos para veterinarias",
+    "start_url": "/domino-veterinaria/index.html",
     "display": "standalone",
     "background_color": "#0a0a0a",
     "theme_color": "#0a0a0a",
@@ -14,5 +14,6 @@
             "sizes": "512x512",
             "type": "image/png"
         }
-    ]
+    ],
+    "scope": "/domino-veterinaria/"
 }
