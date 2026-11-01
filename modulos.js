@@ -6,10 +6,10 @@
   const RUBRO = 'veterinaria';
   // Marca del negocio que contrata DOMino. En el Hub se muestra SU logo (imagenes/logo-cliente.png) y su nombre, no los de DOMino.
   // Si el archivo del logo no existe, se ve el de DOMino. Lo completa alta/preparar-cliente.js.
-  const CLIENTE = { nombre: 'Veterinaria (demo)', logo: 'imagenes/logo-cliente.png' };
+  const CLIENTE = { nombre: (window.DOMINO_DEMO && window.DOMINO_DEMO.activa) ? 'Alma Animal Veterinaria' : 'Veterinaria (demo)', logo: 'imagenes/logo-cliente.png' };
   // Gestión de documentos (guardar y enviar archivos). Necesita Firebase Storage activo en el proyecto del cliente.
   // Mientras esté en false, el Hub muestra «Próximamente» y no deja cargar documentos. Pasar a true cuando Storage esté listo y probado.
-  const DOCUMENTOS = false;
+  const DOCUMENTOS = !!(window.DOMINO_DEMO && window.DOMINO_DEMO.activa); // en la demostración se muestra el módulo de documentos
 
   // Esta copia es solo de Veterinaria: siempre se habla de «dueños» y «mascotas».
   const PERFILES = {
@@ -57,6 +57,8 @@
   window.DOMINO_RUBRO = elegido;
   window.DOMINO_PERFIL = P;
   window.DOMINO_MODULOS = Object.assign({ turnos: false }, P.modulos);
+  // En la demostración no se conecta con el servicio real de turnos (sería tocar datos de verdad).
+  if (window.DOMINO_DEMO && window.DOMINO_DEMO.activa) window.DOMINO_MODULOS.turnos = false;
   window.DOMINO_FUNC = { documentos: DOCUMENTOS };
   window.DOMINO_T = (k, porDefecto) => (P.textos && P.textos[k]) || porDefecto;
   // Reemplaza los textos fijos del perfil cuando la página ya está lista
